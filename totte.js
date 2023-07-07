@@ -69,8 +69,9 @@ function draw(){
 
 
     noStroke();
-    fill(0);
+    fill(255,0,0);
     for(let i=0; i<pos.length; i++){
+        if(i>=4)    fill(0);
         circle(pos[i][0], pos[i][1], 20);
     }
 
