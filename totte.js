@@ -71,11 +71,11 @@ function draw(){
     noStroke();
     fill(255,0,0);
     for(let i=0; i<pos.length; i++){
-        if(i>=4)    fill(0);
+        if(i>=4)    fill(0,255,0);
         circle(pos[i][0], pos[i][1], 20);
     }
 
-    fill(0,255,0);
+    fill(0);
     for(let i=4; i<9; i++){
         circle(pos2[i][0], pos2[i][1], 20);
     }
@@ -83,15 +83,16 @@ function draw(){
     stroke(0);
     for(let i=0; i<graph.length; i++){
         for(let j=0; j<graph[i].length; j++){
-            line(pos[i][0], pos[i][1], pos[graph[i][j]][0], pos[graph[i][j]][1]);
+            line(pos2[i][0], pos2[i][1], pos2[graph[i][j]][0], pos2[graph[i][j]][1]);
         }
     }
 
-    
 
     if(mode == 1){
         pos[sel][0] = mouseX;
         pos[sel][1] = mouseY;
+        pos2[sel][0] = mouseX;
+        pos2[sel][1] = mouseY;
     }
 }
 
