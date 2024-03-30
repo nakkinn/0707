@@ -7,6 +7,11 @@ for(let i=0;i<9;i++)    for(let j=0;j<9;j++)    maze[i][j]=0;
 let ts=53,rs=11,px=0,py=20,col=['#3a57fd','#f14434','#20992a','#000000'];
 let x1=0,x2=0,y1=0,y2=0,start=0,turn=0,pos=[[0,0],[0,16]],wall=[10,10];
 
+function disableScroll(event) { //スマホの縦スクロールを制限
+    event.preventDefault();
+}
+document.addEventListener('touchmove', disableScroll, { passive: false });
+
 function setup(){
     createCanvas(windowWidth,windowHeight);
     px=(width-height)/2;
